@@ -11,3 +11,6 @@ project.lock.json
 Properties/
 vcap-local.json
 .DS_Store
+DotNetSummitMobileApp/
+Droid/
+iOS/
