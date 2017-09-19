@@ -286,3 +286,20 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# Default
+
+.vs/
+.vscode/
+.idea/
+artifacts/
+bin/
+obj/
+*.sln
+*.xproj
+*.xproj.user
+project.lock.json
+Properties/
+vcap-local.json
+.DS_Store
+DotNetSummit.userprefs

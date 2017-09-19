@@ -1,0 +1,13 @@
+.vs/
+.vscode/
+.idea/
+artifacts/
+bin/
+obj/
+*.sln
+*.xproj
+*.xproj.user
+project.lock.json
+Properties/
+vcap-local.json
+.DS_Store
