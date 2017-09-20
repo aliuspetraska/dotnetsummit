@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿using DotNetSummitMobileApp.Pages;
 using Xamarin.Forms;
 
 namespace DotNetSummitMobileApp
@@ -8,23 +7,30 @@ namespace DotNetSummitMobileApp
     {
         public App()
         {
-            // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "DotNetSummitMobileApp",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
+			var tabbedPage = new TabbedPage
+			{
+				Title = "#dotnetsummit",
+                BarBackgroundColor = Color.FromHex("6B459A"),
+                BarTextColor = Color.White
+			};
 
-            MainPage = new NavigationPage(content);
+            tabbedPage.Children.Add(new SpeakersPage()
+            {
+                Title = "Speakers",
+                Icon = "conference.png"
+			});
+
+			tabbedPage.Children.Add(new ProgramPage()
+			{
+				Title = "Program",
+                Icon = "presentation.png"
+			});
+
+			// The root page of your application
+			MainPage = new NavigationPage(tabbedPage) {
+				BarBackgroundColor = Color.FromHex("6B459A"),
+				BarTextColor = Color.White
+            };
         }
 
         protected override void OnStart()

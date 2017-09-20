@@ -56,13 +56,20 @@ namespace DotNetSummitWebApi.Services
 
 				if (topic != "skip")
 				{
-					program.Add(new Track
+                    var fullName = trackElement.QuerySelector("div.speakername .full-name").TextContent.Trim();
+
+                    if (string.IsNullOrEmpty(fullName))
+                    {
+                        fullName = "Networking";
+                    }
+
+                    program.Add(new Track
 					{
 						TrackId = trackId,
 						Time = DateTime.ParseExact(
 							trackElement.QuerySelector("time").TextContent.Trim().Split('-')[0], "H:mm",
 							CultureInfo.InvariantCulture, DateTimeStyles.None),
-						FullName = trackElement.QuerySelector("div.speakername .full-name").TextContent.Trim(),
+						FullName = fullName,
 						Topic = topic,
 						Description = trackElement.QuerySelector("p").TextContent.Trim()
 					});

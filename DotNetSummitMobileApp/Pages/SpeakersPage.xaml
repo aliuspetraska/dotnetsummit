@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DotNetSummitMobileApp.Pages.SpeakersPage" 
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Spacing="0"
+            Padding="0"
+            Margin="0">
+            <ActivityIndicator x:Name="ActivityIndicatorView"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="25"
+                HeightRequest="25"
+                IsRunning="true"
+                IsVisible="true"
+                Color="Black">
+            </ActivityIndicator>
+            <ListView x:Name="SpeakersListView"
+                CachingStrategy="RecycleElement"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                SeparatorColor="#CECED2"
+                HasUnevenRows="true"
+                IsVisible="false"
+                Margin="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="16" Margin="0" Spacing="16">
+                                <Image Source="{Binding Path=Photo}"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="64"
+                                    HeightRequest="64" />
+                                <StackLayout Orientation="Vertical" Padding="0" Margin="0" Spacing="4" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                    <Label Text="{Binding Path=FullName}" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+                                    <Label Text="{Binding Path=Position}" FontSize="12" TextColor="Gray" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
