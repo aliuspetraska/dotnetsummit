@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>DotNetSummitMobileApp</string>
+	<string>.NET Summit</string>
 	<key>CFBundleName</key>
-	<string>DotNetSummitMobileApp</string>
+	<string>.NET Summit</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.petraska.DotNetSummitMobileApp</string>
+	<string>com.petraska.dotnetsummitmobileapp</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

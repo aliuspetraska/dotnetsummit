@@ -28,12 +28,17 @@ namespace DotNetSummitMobileApp
 
             NavigationPage.SetBackButtonTitle(tabbedPage, "Back");
 
-			// The root page of your application
-			MainPage = new NavigationPage(tabbedPage)
+            // The root page of your application
+
+            /*
+            MainPage = new NavigationPage(tabbedPage)
 			{
 				BarBackgroundColor = Color.FromHex("6B459A"),
 				BarTextColor = Color.White,
 			};
+			*/
+
+            MainPage = new DemoPage();
         }
 
         protected override void OnStart()

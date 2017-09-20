@@ -4,8 +4,8 @@ using Android.OS;
 
 namespace DotNetSummitMobileApp.Droid
 {
-    [Activity(Label = "DotNetSummitMobileApp.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", 
-              MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = ".NET Summit", Icon = "@drawable/icon", Theme = "@style/MyTheme", 
+              MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
