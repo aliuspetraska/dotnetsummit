@@ -18,7 +18,17 @@ namespace DotNetSummitMobileApp.Pages
             _dataService = new DataService();
 
 			ProgramListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
-				ProgramListView.SelectedItem = null;
+                if (e.SelectedItem != null) 
+                {
+                    var track = e.SelectedItem as Track;
+
+                    if (track.FullName != "Networking")
+                    {
+                        Navigation.PushAsync(new SpeakerDetails(track.FullName));
+                    }
+
+					ProgramListView.SelectedItem = null;
+                }
 			};
 
             ProgramListView.IsGroupingEnabled = true;

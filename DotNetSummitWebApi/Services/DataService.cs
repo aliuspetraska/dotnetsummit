@@ -31,7 +31,7 @@ namespace DotNetSummitWebApi.Services
 					Photo = string.Concat(Url, speakerElement.QuerySelector("div.speakerphotoandname img").GetAttribute("src").Trim()),
 					FullName = speakerElement.QuerySelector("div.speakername .full-name").TextContent.Trim(),
 					Position = speakerElement.QuerySelector("div.speakername .position").TextContent.Trim(),
-					Bio = speakerElement.QuerySelector("p").TextContent.Trim()
+                    Bio = CleanText(speakerElement.QuerySelector("p").TextContent.Trim())
 				});
 			}
 
@@ -70,14 +70,19 @@ namespace DotNetSummitWebApi.Services
 							trackElement.QuerySelector("time").TextContent.Trim().Split('-')[0], "H:mm",
 							CultureInfo.InvariantCulture, DateTimeStyles.None),
 						FullName = fullName,
-						Topic = topic,
-						Description = trackElement.QuerySelector("p").TextContent.Trim()
+                        Topic = CleanText(topic),
+                        Description = CleanText(trackElement.QuerySelector("p").TextContent.Trim())
 					});
 				}
 			}
 
 			return program;
 		}
+
+        private static string CleanText(string text)
+        {
+            return text.Replace("  ", " ").Replace(" \n", "\n").Replace("\n", "\n\n");    
+        }
 	}
 
 	public interface IDataService

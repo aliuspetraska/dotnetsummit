@@ -26,11 +26,14 @@ namespace DotNetSummitMobileApp
                 Icon = "presentation.png"
 			});
 
+            NavigationPage.SetBackButtonTitle(tabbedPage, "Back");
+
 			// The root page of your application
-			MainPage = new NavigationPage(tabbedPage) {
+			MainPage = new NavigationPage(tabbedPage)
+			{
 				BarBackgroundColor = Color.FromHex("6B459A"),
-				BarTextColor = Color.White
-            };
+				BarTextColor = Color.White,
+			};
         }
 
         protected override void OnStart()
