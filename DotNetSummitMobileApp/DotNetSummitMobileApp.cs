@@ -38,7 +38,13 @@ namespace DotNetSummitMobileApp
 			};
 			*/
 
-            MainPage = new DemoPage();
+            MainPage = new NavigationPage(new DemoPage() {
+                Title = "Demo Page",
+                BackgroundColor = Color.White
+            }) {
+                BarBackgroundColor = Color.Red,
+                BarTextColor = Color.Yellow
+            };
         }
 
         protected override void OnStart()

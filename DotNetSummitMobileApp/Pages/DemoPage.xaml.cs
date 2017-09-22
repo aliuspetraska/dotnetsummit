@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using DotNetSummitMobileApp.CustomComponents;
 using Xamarin.Forms;
 
 namespace DotNetSummitMobileApp.Pages
@@ -10,6 +8,15 @@ namespace DotNetSummitMobileApp.Pages
         public DemoPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            LayoutRoot.Children.Add(new CustomEntry{
+                Placeholder = "Placeholder..."
+            });
         }
     }
 }

@@ -24,11 +24,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\DemoPage.xaml.cs">
       <DependentUpon>DemoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomComponents\CustomEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)CustomComponents\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\SpeakersPage.xaml">
