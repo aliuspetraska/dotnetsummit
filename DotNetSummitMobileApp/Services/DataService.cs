@@ -6,29 +6,27 @@ using RestSharp;
 
 namespace DotNetSummitMobileApp.Services
 {
-    public class DataService : IDataService
-    {
-        private Conference _conference = new Conference();
+	public class DataService : IDataService
+	{
+		private Conference _conference = new Conference();
 
-        private RestClient _restClient = new RestClient("http://dotnetsummit.mybluemix.net/");
-        private RestRequest _restRequest = new RestRequest("api/conference", Method.GET);
+		private RestClient _restClient = new RestClient("http://dotnetsummit.mybluemix.net/");
+		private RestRequest _restRequest = new RestRequest("api/conference", Method.GET);
 
-        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-
-        public async Task<Conference> GetAllData()
-        {
+		public async Task<Conference> GetAllData()
+		{
 			if (_conference.Speakers == null || _conference.Tracks == null)
 			{
-				var restResponse = await _restClient.ExecuteTaskAsync(_restRequest, _cancellationTokenSource.Token);
+				var restResponse = await _restClient.ExecuteTaskAsync(_restRequest, new CancellationTokenSource().Token);
 				_conference = JsonConvert.DeserializeObject<Conference>(restResponse.Content);
 			}
 
 			return _conference;
-        }
-    }
+		}
+	}
 
-    public interface IDataService
-    {
-        Task<Conference> GetAllData();
-    }
+	public interface IDataService
+	{
+		Task<Conference> GetAllData();
+	}
 }

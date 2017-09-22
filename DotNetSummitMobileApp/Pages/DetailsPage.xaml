@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DotNetSummitMobileApp.Pages.DetailsPage"
+    BackgroundColor="White"
+    Title="Speaker Details">
+	<ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator x:Name="ActivityIndicatorView"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="25"
+                HeightRequest="25"
+                IsRunning="true"
+                IsVisible="true"
+                Color="Black">
+            </ActivityIndicator>
+            <ScrollView x:Name="DetailsScrollView" IsVisible="false">
+                <StackLayout Spacing="0">
+                    <StackLayout BackgroundColor="#f1b94f"
+                        Spacing="16"
+                        Padding="32"
+                        Margin="0">
+                        <Image x:Name="SpeakerPhoto"
+                            WidthRequest="100"
+                            HeightRequest="100"
+                            HorizontalOptions="Center" />
+                        <StackLayout Spacing="4">
+                            <Label x:Name="FullName"
+                                FontSize="16"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center" />
+                            <Label x:Name="Position"
+                                FontSize="12"
+                                TextColor="Black"
+                                HorizontalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#EFEFF4"
+                        HeightRequest="48">
+                        <Label Text="Bio"
+                            FontSize="14"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            VerticalOptions="FillAndExpand"
+                            VerticalTextAlignment="Center"
+                            Margin="16, 0" />
+                    </StackLayout>
+                    <Label x:Name="Bio"
+                        FontSize="12"
+                        TextColor="Black"
+                        Margin="16" />
+                    <StackLayout BackgroundColor="#EFEFF4"
+                        HeightRequest="48">
+                        <Label Text="Topic"
+                            FontSize="14"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            VerticalOptions="FillAndExpand"
+                            VerticalTextAlignment="Center"
+                            Margin="16, 0" />
+                    </StackLayout>
+                    <Label x:Name="Topic"
+                        FontSize="16"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        Margin="16, 16, 16, 0" />
+                    <Label x:Name="Description"
+                        FontSize="12"
+                        TextColor="Black"
+                        Margin="16" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

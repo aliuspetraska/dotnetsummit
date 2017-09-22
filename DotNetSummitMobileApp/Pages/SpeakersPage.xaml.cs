@@ -4,43 +4,44 @@ using Xamarin.Forms;
 
 namespace DotNetSummitMobileApp.Pages
 {
-    public partial class SpeakersPage : ContentPage
-    {
-        private static DataService _dataService;
+	public partial class SpeakersPage : ContentPage
+	{
+		private static DataService _dataService;
 
-        public SpeakersPage()
-        {
-            InitializeComponent();
+		public SpeakersPage()
+		{
+			InitializeComponent();
 
-            _dataService = new DataService();
+			_dataService = new DataService();
 
-            SpeakersListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
+			SpeakersListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
 				if (e.SelectedItem != null)
 				{
-                    var speaker = e.SelectedItem as Speaker;
+					var speaker = e.SelectedItem as Speaker;
 
-                    Navigation.PushAsync(new SpeakerDetails(speaker.FullName));
+                    Navigation.PushAsync(new DetailsPage(speaker.FullName));
+
 					SpeakersListView.SelectedItem = null;
 				}
-            };
-        }
+			};
+		}
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
+		protected override async void OnAppearing()
+		{
+			base.OnAppearing();
 
-            InvertControlsVisibility(true);
+			InvertControlsVisibility(true);
 
-            var data = await _dataService.GetAllData();
-            SpeakersListView.ItemsSource = data.Speakers;
+			var data = await _dataService.GetAllData();
+			SpeakersListView.ItemsSource = data.Speakers;
 
-            InvertControlsVisibility(false);
-        }
+			InvertControlsVisibility(false);
+		}
 
-        private void InvertControlsVisibility(bool visible)
-        {
+		private void InvertControlsVisibility(bool visible)
+		{
 			SpeakersListView.IsVisible = !visible;
 			ActivityIndicatorView.IsVisible = visible;
-        }
-    }
+		}
+	}
 }

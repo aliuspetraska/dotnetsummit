@@ -10,6 +10,7 @@ namespace DotNetSummitMobileApp
 			var tabbedPage = new TabbedPage
 			{
 				Title = "#dotnetsummit",
+
                 BarBackgroundColor = Color.FromHex("6B459A"),
                 BarTextColor = Color.White
 			};
@@ -29,22 +30,11 @@ namespace DotNetSummitMobileApp
             NavigationPage.SetBackButtonTitle(tabbedPage, "Back");
 
             // The root page of your application
-
-            /*
             MainPage = new NavigationPage(tabbedPage)
 			{
 				BarBackgroundColor = Color.FromHex("6B459A"),
 				BarTextColor = Color.White,
 			};
-			*/
-
-            MainPage = new NavigationPage(new DemoPage() {
-                Title = "Demo Page",
-                BackgroundColor = Color.White
-            }) {
-                BarBackgroundColor = Color.Red,
-                BarTextColor = Color.Yellow
-            };
         }
 
         protected override void OnStart()

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DotNetSummitMobileApp.Pages.ProgramPage"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="DotNetSummitMobileApp.Pages.ProgramPage"
     BackgroundColor="White">
 	<ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
-            Padding="0"
-            Margin="0">
+        <StackLayout>
             <ActivityIndicator x:Name="ActivityIndicatorView"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand"
@@ -18,8 +16,6 @@
             </ActivityIndicator>
             <ListView x:Name="ProgramListView"
                 CachingStrategy="RecycleElement"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
                 SeparatorColor="#CECED2"
                 HasUnevenRows="true"
                 IsVisible="false"
@@ -28,7 +24,13 @@
                     <DataTemplate>
                         <ViewCell Height="48">
                             <StackLayout BackgroundColor="#EFEFF4">
-                                <Label Text="{Binding Key}" FontSize="14" TextColor="Black" FontAttributes="Bold" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" Margin="16, 0" />
+                                <Label Text="{Binding Key}"
+                                    FontSize="14"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Center"
+                                    Margin="16, 0" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -36,10 +38,19 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="16" Margin="0" Spacing="16">
-                                <StackLayout Orientation="Vertical" Padding="0" Margin="0" Spacing="4" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
-                                    <Label Text="{Binding Path=Topic}" FontSize="16" TextColor="Black" FontAttributes="Bold" />
-                                    <Label Text="{Binding Path=FullName}" FontSize="12" TextColor="Gray" />
+                            <StackLayout Orientation="Horizontal"
+                                Padding="16"
+                                Spacing="16">
+                                <StackLayout Spacing="4"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="Center">
+                                    <Label Text="{Binding Path=Topic}"
+                                        FontSize="16"
+                                        TextColor="Black"
+                                        FontAttributes="Bold" />
+                                    <Label Text="{Binding Path=FullName}"
+                                        FontSize="12"
+                                        TextColor="Gray" />
                                 </StackLayout>
                                 <Label Text="{Binding Path=TrackId}" 
                                     FontSize="14" 

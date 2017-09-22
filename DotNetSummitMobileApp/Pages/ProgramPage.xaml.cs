@@ -17,6 +17,8 @@ namespace DotNetSummitMobileApp.Pages
 
             _dataService = new DataService();
 
+            ProgramListView.IsGroupingEnabled = true;
+
 			ProgramListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
                 if (e.SelectedItem != null) 
                 {
@@ -24,17 +26,15 @@ namespace DotNetSummitMobileApp.Pages
 
                     if (track.FullName != "Networking")
                     {
-                        Navigation.PushAsync(new SpeakerDetails(track.FullName));
+                        Navigation.PushAsync(new DetailsPage(track.FullName));
                     }
 
 					ProgramListView.SelectedItem = null;
                 }
 			};
-
-            ProgramListView.IsGroupingEnabled = true;
 		}
 
-        public ObservableCollection<Grouping<string, Track>> TracksGrouped { get; set; }
+        private ObservableCollection<Grouping<string, Track>> TracksGrouped { get; set; }
 
 		protected override async void OnAppearing()
 		{
