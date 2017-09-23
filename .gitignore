@@ -295,7 +295,6 @@ __pycache__/
 artifacts/
 bin/
 obj/
-*.sln
 *.xproj
 *.xproj.user
 project.lock.json
